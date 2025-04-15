@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAMCET Study Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        .timeline {
+            width: 80%;
+            max-width: 400px;
+            height: 8px;
+            background: #ccc;
+            position: relative;
+            margin-top: 50px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 8px;
+            width: 0;
+            background: linear-gradient(to right, #ff8c00, #ff2e63);
+            position: absolute;
+            transition: width 3s linear;
+        }
+        .marker {
+            position: absolute;
+            top: -6px;
+            height: 20px;
+            width: 20px;
+            background: #ff2e63;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .exam-dates {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .study-plan {
+            margin-top: 30px;
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #ff2e63;
+            color: white;
+        }
+        .highlight {
+            background: rgba(255, 46, 99, 0.3);
+            font-weight: bold;
+            color: black;
+        }
+        .note {
+            margin-top: 15px;
+            font-size: 14px;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="exam-dates">Loading Exam Dates...</div>
+    <div class="timeline">
+        <div class="progress"></div>
+        <div class="marker" style="left: 0%;">📍</div>
+        <div class="marker" style="left: 50%;">TS</div>
+        <div class="marker" style="left: 100%;">AP</div>
+    </div>
+    <div class="study-plan">
+        <h2>Study Plan</h2>
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Activity</th>
+            </tr>
+            <tr><td>6 AM - 9 AM</td><td>📘 Subject 1</td></tr>
+            <tr><td>9 AM - 10 AM</td><td>☕ Break</td></tr>
+            <tr><td>10 AM - 1 PM</td><td>📘 Subject 2</td></tr>
+            <tr><td>1 PM - 2 PM</td><td>🍽️ Lunch Break</td></tr>
+            <tr><td>2 PM - 5 PM</td><td>📘 Subject 3</td></tr>
+            <tr><td>5 PM - 7 PM</td><td>🏃 Break</td></tr>
+            <tr><td>7 PM - 9 PM</td><td>📘 Subject 4</td></tr>
+            <tr><td>9 PM - 10 PM</td><td>🍵 Break</td></tr>
+            <tr><td>10 PM - 11 PM</td><td>📘 Subject 4</td></tr>
+            <tr><td>11 PM - 6 AM</td><td>😴 Sleep</td></tr>
+        </table>
+        <p class="note">📌 Note: This is just a general plan. Adjust timings based on your comfort. <br>📘 Subject 1-4 refers to Maths A, Maths B, Physics, and Chemistry (not in any order). Follow as per your preference.</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let progress = document.querySelector(".progress");
+            let studyPlan = document.querySelector(".study-plan");
+            let examDates = document.querySelector(".exam-dates");
+            let today = new Date();
+            let tsExam = new Date("2025-05-02");
+            let apExam = new Date("2025-05-21");
+            let daysToTs = Math.ceil((tsExam - today) / (1000 * 60 * 60 * 24));
+            let daysToAp = Math.ceil((apExam - today) / (1000 * 60 * 60 * 24));
+            examDates.innerHTML = `TS EAMCET: <b>${daysToTs} days left! ⚠️</b><br>AP EAMCET: <b>${daysToAp} days left! ⚠️</b>`;
+
+            setTimeout(() => {
+                progress.style.width = "50%";
+                setTimeout(() => {
+                    progress.style.width = "100%";
+                    setTimeout(() => {
+                        studyPlan.style.display = "block";
+                        setTimeout(() => {
+                            studyPlan.style.opacity = "1";
+                            studyPlan.style.transform = "translateY(0)";
+                            highlightCurrentTime();
+                        }, 500);
+                    }, 1000);
+                }, 2000);
+            }, 500);
+        });
+
+        function highlightCurrentTime() {
+            let currentHour = new Date().getHours();
+            let timeSlots = [
+                { start: 6, end: 9, row: 1 },
+                { start: 9, end: 10, row: 2 },
+                { start: 10, end: 13, row: 3 },
+                { start: 13, end: 14, row: 4 },
+                { start: 14, end: 17, row: 5 },
+                { start: 17, end: 19, row: 6 },
+                { start: 19, end: 21, row: 7 },
+                { start: 21, end: 22, row: 8 },
+                { start: 22, end: 23, row: 9 },
+                { start: 23, end: 24, row: 10 },
+                { start: 0, end: 6, row: 10 }
+            ];
+
+            let rows = document.querySelectorAll("table tr");
+
+            timeSlots.forEach(slot => {
+                if (currentHour >= slot.start && currentHour < slot.end) {
+                    rows[slot.row].classList.add("highlight");
+                }
+            });
+
+            let activeRow = document.querySelector(".highlight");
+            if (activeRow) {
+                setTimeout(() => {
+                    activeRow.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

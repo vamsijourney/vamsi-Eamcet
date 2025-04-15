@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EAMCET Course</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login to Access the Course</h2>
+            <form onsubmit="return login()">
+                <input type="text" id="username" placeholder="Enter Username" required>
+                <input type="password" id="password" placeholder="Enter Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p class="note">Only paid members can access the course.</p>
+        </div>
+    </div>
+
+    <script>
+        // Allowed usernames and passwords
+        const users = {
+            "admin": ["1234", "5678", "abcd", "pass1", "pass2"],
+            "user1": ["qwerty", "welcome", "test123", "hello", "world"],
+            "student1": ["password123"],
+            "student2": ["pass456"],
+            "eamcet2025": ["vamsijourney"],
+            "pvk": ["098"],
+            "user001": ["pass001"],
+            "user002": ["pass002"],
+            "user003": ["pass003"],
+            "hemanth": ["123"],
+            "dvs": ["123"],
+            "vamsi": ["123"],
+            "eswar": ["123"],
+            "ramesh": ["123"],
+            "einstein": ["123"],
+            "varshit": ["123"],
+            "sandeep": ["123"],
+            "abc123": ["123"],
+            "xyz456": ["456"],
+            "pqr789": ["789"],
+            "lmn321": ["321"],
+            "def654": ["654"],
+            "uvw987": ["987"],
+            "ghi741": ["741"],
+            "rst852": ["852"],
+            "klm369": ["369"],
+            "tuv258": ["258"],
+            "mnp147": ["147"],
+            "jkl753": ["753"],
+            "bcd963": ["963"],
+            "qwe159": ["159"],
+            "asd753": ["753"],
+            "zxc951": ["951"],
+            "vbn753": ["753"],
+            "poi357": ["357"],
+            "lkj258": ["258"],
+            "mnb654": ["654"],
+            "yui159": ["159"],
+            "hjk951": ["951"],
+            "edc357": ["357"],
+            "wsx852": ["852"],
+            "tre654": ["654"],
+            "oiu951": ["951"],
+            "pas357": ["357"],
+            "xcv789": ["789"],
+            "bnm123": ["123"],
+            "asd741": ["741"],
+            "qaz852": ["852"],
+            "wsx369": ["369"],
+            "edc147": ["147"],
+            "rfv258": ["258"],
+            "tgb369": ["369"],
+            "yhn963": ["963"],
+            "uji789": ["789"],
+            "ikm654": ["654"],
+            "olp123": ["123"],
+            "vfd852": ["852"],
+            "nhy357": ["357"],
+            "ghj147": ["147"],
+            "zxc258": ["258"],
+            "vbn951": ["951"],
+            "asd963": ["963"],
+            "qwe456": ["456"],
+            "lkj753": ["753"],
+            "edc159": ["159"],
+            "wsx357": ["357"],
+            "tre852": ["852"],
+            "yui654": ["654"],
+            "poi789": ["789"],
+            "pas951": ["951"],
+            "mnb159": ["159"],
+            "ghj258": ["258"],
+            "bnm753": ["753"],
+            "asd951": ["951"],
+            "qwe789": ["789"],
+            "yhn456": ["456"],
+            "ujm147": ["147"],
+            "ikm369": ["369"],
+            "olp258": ["258"],
+            "edc852": ["852"],
+            "wsx741": ["741"],
+            "rfv123": ["123"],
+            "tgb456": ["456"],
+            "yhn789": ["789"],
+            "uji321": ["321"],
+            "olp654": ["654"],
+            "mnb963": ["963"],
+            "ghj753": ["753"],
+            "asd159": ["159"],
+            "qwe357": ["357"],
+            "tre951": ["951"],
+            "poi852": ["852"],
+            "lkj369": ["369"],
+            "vbn147": ["147"],
+            "xcv258": ["258"],
+            "bnm654": ["654"],
+            "rfv789": ["789"],
+            "yui123": ["123"],
+            "ujm456": ["456"],
+            "ikm753": ["753"],
+            "olp159": ["159"],
+            "edc951": ["951"],
+            "wsx852": ["852"],
+            "tgb369": ["369"],
+            "yhn147": ["147"],
+            "uji258": ["258"],
+            "lkj654": ["654"],
+            "mnb789": ["789"],
+            "asd321": ["321"],
+            "qwe963": ["963"],
+            "poi753": ["753"],
+            "pas159": ["159"],
+            "zxc357": ["357"],
+            "tre951": ["951"],
+            "yhn852": ["852"]
+        };
+
+        function login() {
+            const user = document.getElementById('username').value.trim();
+            const pass = document.getElementById('password').value.trim();
+
+            if (users[user] && users[user].includes(pass)) {
+                localStorage.setItem("loggedInUser", user);
+                window.location.href = "dashboard.html"; // Redirect to the course page
+                return false; // Prevent form from actually submitting
+            } else {
+                alert("Invalid credentials");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

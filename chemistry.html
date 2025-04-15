@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Weightage - EAMCET</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <script src="script.js" defer></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #f4f4f4; color: #333; }
+        .header { background: #8e24aa; color: #fff; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .header h2 { font-size: 22px; font-weight: 600; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 16px; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { text-decoration: underline; color: #ffcc00; }
+        .content { max-width: 800px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center; }
+        .content h1 { color: #8e24aa; font-size: 24px; margin-bottom: 20px; }
+        .options { display: flex; flex-direction: column; gap: 20px; }
+        .option { background: #8e24aa; color: #fff; padding: 15px; border-radius: 8px; font-size: 18px; font-weight: bold; text-decoration: none; transition: 0.3s; }
+        .option:hover { background: #ffcc00; color: #003366; transform: scale(1.05); }
+        @media (max-width: 768px) {
+            .header { flex-direction: column; text-align: center; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Chemistry Weightage</h2>
+        <div class="nav-links">
+            <a href="dashboard.php">Dashboard</a>
+            <a href="weightage.html">Back</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Select an Option</h1>
+        <div class="options">
+            <a href="chemistry-total-weightage.html" class="option">📊 Total Weightage</a>
+            <a href="chemistry-min-ranks.html" class="option">🎯 Minimum Marks Weightage</a>
+            <a href="chemistry-pass-ranks.html" class="option">🎯 pass Marks Weightage</a>
+        </div>
+    </div>
+</body>
+</html>

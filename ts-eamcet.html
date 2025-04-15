@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 TS EAMCET 2025 Rank Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            margin: 20px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #0073e6;
+            color: white;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #005bb5;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .highlight {
+            background-color: #ffeb3b;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .disqualified {
+            color: red;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e6f2ff;
+            font-size: 14px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>📊 TS EAMCET 2025 Rank Predictor</header>
+
+    <div class="container">
+        <label for="eamcet">📢 TS EAMCET Marks (out of 160):</label>
+        <input type="number" id="eamcet" placeholder="Enter EAMCET Marks" required>
+
+        <button onclick="predictRank()">🚀 Predict Rank</button>
+
+        <p id="result"></p>
+    </div>
+
+    <footer>
+        <p>📢 <strong>How is the rank calculated?</strong></p>
+        <p>✅ The final rank is now based **only on EAMCET marks**:</p>
+        <ul style="text-align: left; margin-left: 20px;">
+            
+            <li>📝  100% EAMCET Marks</li>
+        </ul>
+        <p>📌 These predictions are based on previous years' data and trends.</p>
+    </footer>
+    <script>
+        function predictRank() {
+            let eamcet = parseFloat(document.getElementById('eamcet').value) || 0;
+            let predictedRank;
+    
+            if (eamcet <= 39) {
+                predictedRank = `<span class="disqualified">❌ Disqualified (Few Categories Eligible)</span>`;
+            } else {
+                if (eamcet >= 112) {
+                    predictedRank = "🥇 Rank: 1 - 1,000 🎯";
+                } else if (eamcet >= 103) {
+                    predictedRank = "🥈 Rank: 1,001 - 2,000";
+                } else if (eamcet >= 94) {
+                    predictedRank = "🥉 Rank: 2,001 - 3,000";
+                } else if (eamcet >= 86) {
+                    predictedRank = "🎯 Rank: 3,001 - 5,000";
+                } else if (eamcet >= 77) {
+                    predictedRank = "📊 Rank: 5,001 - 10,000";
+                } else if (eamcet >= 71) {
+                    predictedRank = "📊 Rank: 10,001 - 13,000";
+                } else if (eamcet >= 66) {
+                    predictedRank = "📉 Rank: 13,001 - 20,000";
+                } else if (eamcet >= 62) {
+                    predictedRank = "📉 Rank: 20,001 - 25,000";
+                } else if (eamcet >= 59) {
+                    predictedRank = "📉 Rank: 25,001 - 30,000";
+                } else if (eamcet >= 57) {
+                    predictedRank = "📉 Rank: 30,001 - 40,000";
+                } else if (eamcet >= 54) {
+                    predictedRank = "📉 Rank: 40,001 - 50,000";
+                } else if (eamcet >= 52) {
+                    predictedRank = "📉 Rank: 50,001 - 60,000";
+                } else if (eamcet >= 50) {
+                    predictedRank = "📉 Rank: 60,001 - 70,000";
+                } else if (eamcet >= 49) {
+                    predictedRank = "📉 Rank: 70,001 - 80,000";
+                } else if (eamcet >= 48) {
+                    predictedRank = "📉 Rank: 80,001 - 90,000";
+                } else if (eamcet >= 47) {
+                    predictedRank = "📉 Rank: 90,001 - 100,000";
+                } else if (eamcet >= 46) {
+                    predictedRank = "📉 Rank: 100,001 - 1,10,000";
+                } else if (eamcet >= 45) {
+                    predictedRank = "📉 Rank: 1,10,001 - 1,20,000";
+                } else {
+                    predictedRank = "📉 Rank: Above 1,20,000+";
+                }
+            }
+    
+            document.getElementById("result").innerHTML = 
+                `✅ Your TS EAMCET Score: <span class="highlight">${eamcet} / 160</span><br>
+                 📌 Predicted Rank: <span class="highlight">${predictedRank}</span>`;
+        }
+    </script>
+    
+    
+</body>
+</html>

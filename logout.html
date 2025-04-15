@@ -1,0 +1,9 @@
+<button onclick="logout()">Logout</button>
+
+<script>
+    function logout() {
+        localStorage.removeItem("loggedInUser");
+        alert("Logged out successfully!");
+        window.location.href = "login.html"; // Redirect to login
+    }
+</script>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Subject - Weightage</title>
+  
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background: #007bff;
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+header h2 {
+    font-size: 24px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #333;
+}
+
+.subject-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.subject-card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.subject-card:hover {
+    transform: scale(1.05);
+    background: #007bff;
+    color: white;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 10px;
+    background: #222;
+    color: white;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>📊 Weightage Analysis</h2>
+        <nav>
+            <a href="dashboard.php">🏠 Dashboard</a>
+          <!---- <a href="#">📖 Study Plan</a>
+            <a href="#">📈 Rank Predictor</a>-->
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Select a Subject to View Weightage</h1>
+        <div class="subject-container">
+            <div class="subject-card" onclick="navigate('maths.html')">
+                <h3>🧮 Mathematics</h3>
+              
+            </div>
+            <div class="subject-card" onclick="navigate('physics.html')">
+                <h3>⚛️ Physics</h3>
+                
+            </div>
+            <div class="subject-card" onclick="navigate('chemistry.html')">
+                <h3>🧪 Chemistry</h3>
+                
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>🚀 Stay focused & give your best in EAMCET!</p>
+    </footer>
+    
+
+    <script>
+        function navigate(page) {
+    window.location.href = page;
+}
+
+    </script>
+</body>
+</html>

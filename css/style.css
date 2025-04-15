@@ -1,0 +1,196 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.sub-heading {
+    font-size: 18px;
+    margin-top: 5px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Hero Section */
+.hero {
+    background: white;
+    padding: 50px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+}
+
+.course-image {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    background: #ff6600;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #cc5200;
+}
+
+/* Notice Section 
+.notice {
+    margin-top: 20px;
+    padding: 15px;
+    background: #ffe4c4;
+    border-left: 5px solid #ff6600;
+    display: inline-block;
+    text-align: left;
+    max-width: 600px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.notice p {
+    margin: 5px 0;
+    color: #444;
+}
+
+.buy-link {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.buy-link:hover {
+    text-decoration: underline;
+}
+*/
+
+.notice {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 12px;
+    border-left: 6px solid #ff4500;
+    text-align: center;
+    font-size: 17px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.notice h2 {
+    color: #d9534f;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.warning-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d9534f;
+    margin-bottom: 5px;
+}
+
+.highlight {
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.cta-text {
+    font-size: 17px;
+    color: #333;
+    font-weight: 500;
+}
+
+.btn-container {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    margin: 8px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.buy-btn {
+    background: #ff4500;
+    color: white;
+}
+
+.buy-btn:hover {
+    background: #cc3700;
+    transform: scale(1.05);
+}
+
+.access-btn {
+    background: #007bff;
+    color: white;
+}
+
+.access-btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Glow Effect */
+.btn:hover {
+    box-shadow: 0px 0px 15px rgba(255, 68, 0, 0.7);
+}
+
+/* Smooth fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

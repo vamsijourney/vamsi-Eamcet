@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard  </title>
+    <link rel="stylesheet" href="styles.css"> 
+    <script src="script.js" defer></script>
+    <style>
+        /* Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background: #1e3a8a;
+            color: #fff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h2 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffcc00;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #003366;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Dashboard Container */
+        .dashboard {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            font-size: 24px;
+        }
+
+        .course-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .course-card {
+            background: #1e3a8a;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .course-card a {
+            display: block;
+            background: #fff;
+            color: #1e3a8a;
+            padding: 8px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .course-card a:hover {
+            background: #f4f4f4;
+        }
+
+        /* Announcements */
+        .announcements {
+            margin-top: 30px;
+            padding: 15px;
+            background: #fff5cc;
+            border-left: 5px solid #ffcc00;
+            border-radius: 8px;
+        }
+
+        .announcements h3 {
+            font-size: 20px;
+            color: #e67e22;
+            margin-bottom: 10px;
+        }
+
+        /* Resources */
+        .resources {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 10px;
+        }
+
+        .resources h3 {
+            font-size: 22px;
+            color: #1e3a8a;
+        }
+
+        .resource-links a {
+            display: block;
+            color: #003366;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .resource-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: #1e3a8a;
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .course-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Social Links -->
+    <div class="header">
+        <h2>Welcome, Student</h2>
+        <div class="social-icons">
+            
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="nav-links">
+        <a href="https://whatsapp.com/channel/0029Vb28Al305MUnsxBaWo1z" target="_blank">WhatsApp</a>
+            <a href="https://insta.openinapp.co/Vamsi-journey-" target="_blank">Instagram</a>
+            <a href="https://yt.openinapp.co/dze7m" target="_blank">YouTube</a>
+            <a href="logout.html">Logout</a>
+        </div>
+    </div>
+
+    <!-- Dashboard Content 
+    <div class="dashboard">
+        <h1>Access Your EAMCET Course</h1>
+        <div class="course-section">
+            <div class="course-card">
+                <h3>Mock Tests</h3>
+                <p>Practice with real-time mock tests</p>
+                <a href="quiz.html">Start Now</a>
+            </div>
+            <div class="course-card">
+                <h3>Weightage</h3>
+                <p>Get a Chapter wise plan </p>
+                <a href="quiz.php">View Plan</a>
+            </div>
+            <div class="course-card">
+                <h3>Upcoming Live Session</h3>
+                <p>Join weekly live doubt sessions</p>
+                <a href="#">Join Now</a>
+            </div>
+        </div>
+-->
+
+
+
+
+<!-- Dashboard Content -->
+<div class="dashboard">
+    <h1>Access Your EAMCET Resources</h1>
+    <div class="course-section">
+        <div class="course-card">
+            <h3>📝 Mock Tests and PYQ's</h3>
+            <p>Practice with real-time mock tests</p>
+            <a href="mocktest.html">Start Now</a>
+        </div>
+        <div class="course-card">
+            <h3>📊 Weightage</h3>
+            <p>Get a Chapter-wise plan</p>
+            <a href="weightage.html">View Plan</a>
+        </div>
+        <div class="course-card">
+            <h3>🎙️  Live Session</h3>
+            <p>Join weekly live doubt sessions</p>
+            <a href="live-session.html">Join Now</a>
+        </div>
+        <div class="course-card">
+            <h3>📉 Rank Predictor</h3>
+            <p>Estimate your EAMCET Rank based on your expected marks.</p>
+            <a href="rank-predictor.html">Predict Now</a>
+        </div>
+        <div class="course-card">
+            <h3>📖 Study Plan</h3>
+            <p>Get a personalized study plan to improve your preparation.</p>
+            <a href="study-plan.html">Get Plan</a>
+        </div>
+        <div class="course-card">
+            <h3>📘 Formulae</h3>
+            <p>Access important formulas for Physics, Chemistry & Math.</p>
+            <a href="formulae.html">View Formulae</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+        <!-- Announcements Section -->
+        <div class="announcements">
+            <h3>📢 Latest Announcements</h3>
+            <p>🔥 New PYQ's , Weightage & Resources Added! Check them out .</p>
+        </div>
+
+        <!-- Resources Section -->
+        <div class="resources">
+            <h3>📚 Additional Study Resources</h3>
+            <div class="resource-links">
+                <a href="https://drive.google.com/drive/folders/1Pmlw5DOTUbv7riJRgtdJyfTWn8X3lWAl?usp=sharing">Additional Resources Link</a>
+                <a href="https://yt.openinapp.co/dze7m">EAMCET Video Tutorials</a>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Note Section -->
+<div class="note-section" style="text-align: center; margin: 20px auto; padding: 15px; background: #fffae6; border-left: 5px solid #ffcc00; border-radius: 8px; font-size: 16px;">
+    <p><strong>🔔 Note:</strong> You can access this website until your EAMCET exam date.</p>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>© 2025 Vamsi Journey | All Rights Reserved</p>
+    <p>📩 For any issues, contact: 
+        <a href="mailto:forwork@gmail.com" style="color: #ffcc00; text-decoration: none; font-weight: bold;">forwork@gmail.com</a>
+    </p>
+    <p>📲 Reach out on Instagram:  
+        <a href="https://insta.openinapp.co/Vamsi-journey-" target="_blank" style="color: #ffcc00; text-decoration: none; font-weight: bold;">@Vamsi_journey</a>
+    </p>
+</div>
+
+
+    
+    <!-- Footer 
+    <div class="footer">
+        <p>© 2025 Vamsi Journey | All Rights Reserved</p>
+    </div>-->
+    <script>
+    if (!localStorage.getItem("loggedInUser")) {
+        alert("You are not logged in! Redirecting to login page...");
+        window.location.href = "login.html"; // Redirect if not logged in
+    }
+</script>
+
+</body>
+</html>
